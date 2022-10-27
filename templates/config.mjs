@@ -1,1 +1,1 @@
-export const buildFolder = 'dist';
+export const build_folder = 'dist';
