@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script id="base_write_script">
+        document.write(`<base href="http://${window.constants.website}">`);
+        document.querySelector('#base_write_script').remove();
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+   
+    <hello-component data-name="Alex"></hello-component>
+
+    <script src="https://unpkg.com/@gudhub/core/umd/library.min.js"></script>
+    <script src="https://unpkg.com/@gudhub/gh-component"></script>
+
+    <script src="/assets/js/hello/hello.webcomponent.js"></script>
+ 
+</body>
+</html>
