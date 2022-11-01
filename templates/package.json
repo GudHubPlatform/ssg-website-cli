@@ -7,9 +7,11 @@
     "type": "module",
     "scripts": {
         "build": "webpack --config webpack.prod.js",
-        "dev": "webpack --watch --config webpack.dev.js"
+        "dev": "webpack --watch --config webpack.dev.js",
+        "server": "gudhub-web-server"
     },
     "devDependencies": {
+        "@gudhub/webserver": "^1.2.2",
         "clean-webpack-plugin": "^4.0.0",
         "copy-webpack-plugin": "^11.0.0",
         "css-loader": "^6.7.1",
