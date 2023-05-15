@@ -1,0 +1,1 @@
+import "@gudhub/gh-component";

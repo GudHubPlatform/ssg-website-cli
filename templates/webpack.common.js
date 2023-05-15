@@ -44,7 +44,6 @@ export default {
     /* BUNDLING WEBCOMPONENTS */
     entry: glob.sync('src/assets/js/**/*.js').reduce((obj, el) => {
         obj[el.replace('src/', '')] = './' + el;
-        console.log('OBJ', obj);
         return obj;
     }, {}),
     // entry: () => {
