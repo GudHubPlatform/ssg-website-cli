@@ -3,7 +3,9 @@ import { createProject } from './main.js';
 
 export async function cli(args) {
 
-    const options = await promptOptions();
+    const advancedInstall = args.includes('--advanced');
+
+    const options = await promptOptions(advancedInstall);
 
     await createProject(options);
 

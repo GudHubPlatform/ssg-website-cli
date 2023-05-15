@@ -1,0 +1,98 @@
+footer-component {
+
+    .footer {
+        background: #E2E6EF;
+
+        &__top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding-top: 50px;
+            padding-bottom: 25px;
+        }
+
+        &__info {
+            width: 25%;
+
+            .logo {
+                margin-bottom: 15px;
+                
+                img {
+                    width: 150px;
+                }
+            }
+
+            .description {
+                font-weight: 300;
+            }
+        }
+        
+        &__nav {
+            width: 35%;
+
+            .nav {
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin: 0;
+                padding: 0;
+
+                &__item {
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin-left: 25px;
+                    padding-left: 25px;
+                    border-left: 1px solid #8AAFDE;
+
+                    &:nth-child(1) {
+                        margin-left: 0;
+                        padding-left: 0;
+                        border: none;
+                    }
+                }
+            }
+
+            .contacts {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-top: 55px;
+
+                &__item {
+                    font-weight: 300;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+        &__bottom {
+            padding: 25px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #8AAFDE;
+
+            .edit-mode {
+
+                &__wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    white-space: nowrap;
+
+                    edit-mode {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            .copyright {
+                font-size: 15px;
+                color: #4A4A4A;
+            }
+        }
+
+    }
+
+}

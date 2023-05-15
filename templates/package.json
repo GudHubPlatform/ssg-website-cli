@@ -1,5 +1,5 @@
 {
-    "name": "atlasiko-website",
+    "name": "gudhub-website",
     "version": "1.0.0",
     "description": "",
     "author": "",
@@ -7,15 +7,14 @@
     "type": "module",
     "scripts": {
         "build": "webpack --config webpack.prod.js",
-        "dev": "webpack --watch --config webpack.dev.js",
-        "server": "gudhub-web-server"
+        "dev": "webpack --watch --config webpack.dev.js"
     },
     "devDependencies": {
-        "@gudhub/webserver": "^1.2.2",
         "clean-webpack-plugin": "^4.0.0",
         "copy-webpack-plugin": "^11.0.0",
         "css-loader": "^6.7.1",
         "glob": "^8.0.3",
+        "html-loader": "^4.2.0",
         "sass": "^1.55.0",
         "sass-loader": "^13.1.0",
         "style-loader": "^3.3.1",

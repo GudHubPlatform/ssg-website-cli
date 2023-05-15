@@ -1,0 +1,64 @@
+form-component {
+    display: block;
+    
+    .form {
+        padding: 60px 0;
+        
+        &__title {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        &__description {
+            font-weight: 300;
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+
+        &__row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            &.center {
+                justify-content: center;
+            }
+
+            input {
+                width: 48%;
+                padding: 15px;
+                font-weight: 300;
+                color: #000;
+                border: 1px solid #8AAFDE;
+                border-radius: 6px;
+                background: transparent;
+            }
+
+            textarea {
+                resize: none;
+                border: 1px solid #8AAFDE;
+                border-radius: 6px;
+                background: transparent;
+                padding: 15px;
+                min-height: 200px;
+                width: 100%;
+                font-weight: 300;
+            }
+
+            button {
+                background: #BFDBFE;
+                border-radius: 6px;
+                padding: 16px 48px;
+                color: #496983;
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
