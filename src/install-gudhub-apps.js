@@ -6,12 +6,13 @@ import logUpdate from 'log-update';
 const fs = fsSync.promises;
 
 export async function installGudHubApps(user, targetDirectory) {
+    let spinner
     try {
 
         const { frames, interval } = cliSpinners.aesthetic;
         let i = 0;
 
-        const spinner = setInterval(() => {
+        spinner = setInterval(() => {
             logUpdate(`Installing GudHub Applications... ${frames[i = ++i % frames.length]}`);
         }, interval);
 
@@ -33,6 +34,7 @@ export async function installGudHubApps(user, targetDirectory) {
         return true;
 
     } catch (error) {
+        clearInterval(spinner);
         console.log(error);
         return false;
     }
