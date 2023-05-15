@@ -15,7 +15,7 @@ export async function installGudHubApps(user, targetDirectory) {
             logUpdate(`Installing GudHub Applications... ${frames[i = ++i % frames.length]}`);
         }, interval);
 
-        const { data } = await axios.post('https://development.gudhub.com/app-install/express-install', {
+        const { data } = await axios.post('https://gudhub.com/api/services/app-install/express-install', {
             auth_key: user.auth_key,
             template_id: "27822.3743397",
             progress: false
