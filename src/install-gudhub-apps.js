@@ -30,6 +30,7 @@ export async function installGudHubApps(user, targetDirectory) {
         await fs.writeFile(targetDirectory + '/config.mjs', generateConfig(user.auth_key, apps));
 
         clearInterval(spinner);
+        console.log('GudHub Applications installed successfully!');
 
         return true;
 

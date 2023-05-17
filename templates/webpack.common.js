@@ -42,21 +42,14 @@ export default {
         })
     ],
     /* BUNDLING WEBCOMPONENTS */
-    entry: glob.sync('src/assets/js/**/*.js').reduce((obj, el) => {
-        obj[el.replace('src/', '')] = './' + el;
-        return obj;
-    }, {}),
-    // entry: () => {
-    //     const entries = glob.sync('src/assets/js/**/*.js').reduce((obj, el) => {
-    //         obj[el.replace('src/', '')] = './' + el;
-    //         console.log('OBJ', obj);
-    //         return obj;
-    //     }, {});
+    entry: () => {
+        const entries = glob.sync('./src/assets/js/**/*.js').reduce((obj, el) => {
+            obj[el.replace('src/', '')] = el;
+            return obj;
+        }, {});
 
-    //     entries['config.mjs'] = ['/src/routes.js', '/src/chapters.js', '/src/redirects.js', '/src/config.js'];
-
-    //     return entries;
-    // },
+        return entries;
+    },
     output: {
         path: path.resolve('dist'),
         filename: "[name]"
