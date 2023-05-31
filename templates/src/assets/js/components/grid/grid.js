@@ -1,9 +1,11 @@
 import html from './grid.html';
 import './grid.scss';
+import defaultData from './defaultData.json';
 
 class Grid extends GHComponent {
     constructor() {
         super();
+        super.setDefaultData(defaultData);
     }
 
     async onServerRender() {

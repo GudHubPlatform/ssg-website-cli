@@ -1,0 +1,39 @@
+{
+    "title": "Default title",
+    "description": "Default description",
+    "columns": [
+        {
+            "title": "Column title",
+            "items": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus."
+                },
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus."
+                }
+            ]
+        },
+        {
+            "title": "Column title",
+            "items": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus."
+                },
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus."
+                }
+            ]
+        },
+        {
+            "title": "Column title",
+            "items": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus."
+                },
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus."
+                }
+            ]
+        }
+    ]
+}

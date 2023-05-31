@@ -14,9 +14,9 @@
                             <div class="grid__item">
                                 <span gh-id="${ghId}.items.${index}.text" class="title">${ item.text }</span>
                                 ${
-                                    (item.button_text && item.button_link) ? `
-                                        <a href="${ item.button_link }" class="button">
-                                            ${ item.button_text }
+                                    item.button ? `
+                                        <a href="${ item.button.link }" class="button">
+                                            ${ item.button.text }
                                         </a>
                                     ` : ''
                                 }

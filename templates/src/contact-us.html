@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script id="base_write_script">
-        document.write(`<base href="http://${window.constants.website}">`);
-        document.querySelector('#base_write_script').remove();
-    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,19 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-   
+
     <header-component></header-component>
     <hero-component class="small" data-no-text></hero-component>
+    <text-component data-gh-id="about-us"></text-component>
+    <columns-component data-gh-id="data"></columns-component>
     <form-component></form-component>
     <footer-component></footer-component>
 
-    <script src="https://unpkg.com/@gudhub/core/umd/library.min.js"></script>
     <script src="/assets/js/main.js"></script>
 
-    <script src="/assets/js/components/header/header.js"></script>
-    <script src="/assets/js/components/hero/hero.js"></script>
-    <script src="/assets/js/components/form/form.js"></script>
-    <script src="/assets/js/components/footer/footer.js"></script>
- 
 </body>
 </html>

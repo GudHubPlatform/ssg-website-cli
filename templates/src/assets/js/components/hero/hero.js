@@ -8,6 +8,7 @@ class Hero extends GHComponent {
     }
 
     onServerRender() {
+        this.ghId = this.getAttribute('data-gh-id') || null;
         this.noText = this.hasAttribute('data-no-text');
 
         super.render(html);

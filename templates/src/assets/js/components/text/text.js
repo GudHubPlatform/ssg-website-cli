@@ -1,10 +1,12 @@
 import html from './text.html';
 import './text.scss';
+import defaultData from './defaultData.json';
 
 class TextComponent extends GHComponent {
 
     constructor() {
         super();
+        super.setDefaultData(defaultData);
     }
 
     onServerRender() {

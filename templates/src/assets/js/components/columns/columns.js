@@ -1,22 +1,21 @@
 import html from './columns.html';
 import './columns.scss';
+import defaultData from './defaultData.json';
 
 class ColumnsComponent extends GHComponent {
 
     constructor() {
         super();
+        super.setDefaultData(defaultData);
     }
 
     async onServerRender() {
 
         this.ghId = this.getAttribute('data-gh-id') || null;
-        const ids = await super.findIds();
 
-        const response = await gudhub.getDocument({ app_id: ids.appId, item_id: ids.itemId, element_id: window.constants.chapters.pages.json_field_id });
+        this.json = await super.getGhData(this.ghId);
 
-        const json = JSON.parse(response.data);
-
-        this.columns = json[this.ghId].columns;
+        this.columns = this.json.columns;
 
         super.render(html);
 
