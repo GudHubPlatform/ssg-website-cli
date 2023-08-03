@@ -30,7 +30,7 @@ export default {
                     to: '[path][name].html',
                     context: 'src/',
                     filter: (resourcePath) => {
-                        return !resourcePath.includes('assets');
+                        return !resourcePath.includes('/assets/');
                     },
                     transform: (content, resourcePath) => {
                         return new Promise(resolve => {
