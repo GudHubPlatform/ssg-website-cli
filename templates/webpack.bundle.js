@@ -1,16 +1,28 @@
+import glob from 'glob';
 import path from 'path';
 
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+import { components_list as GudhubComponents } from '@gudhub/ssg-web-components-library';
+
 export default {
     /* BUNDLING WEBCOMPONENTS */
-    entry: async () => {
-        const { components_list } = await import(path.resolve() + '/config.mjs' + `?t=${new Date().getTime()}`);
-        const entries = components_list.map(component => {
-            return component.src;
-        });
-        entries.push('/config.mjs');
-        return entries;
+    entry: () => {
+        const entries = glob.sync('./src/assets/js/components/**/*.js');
+
+        // adds "node_modules/@gudhub/ssg-web-components-library" entries
+        const gudhubEntries = (() => {
+            const entries = [];
+            for (const componentConfig of GudhubComponents) {
+                entries.push('./node_modules/' + componentConfig.src);
+            }
+            return entries;
+        })()
+
+        return [
+            ...entries,
+            ...gudhubEntries
+        ];
     },
     output: {
         path: path.resolve('dist/assets/js'),

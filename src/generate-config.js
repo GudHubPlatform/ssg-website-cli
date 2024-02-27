@@ -1,5 +1,6 @@
 export function generateConfig(auth_key, apps) {
     return /*javascript*/`
+import { components_list as GudhubComponents } from '@gudhub/ssg-web-components-library';
 export const build_folder = 'dist';
 
 export const auth_key = "${auth_key}";

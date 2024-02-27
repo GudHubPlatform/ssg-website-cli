@@ -1,9 +1,4 @@
-export const routes = [
-    {
-        route: '/team/:member/',
-        index: '/team-person.html'
-    }
-]
+import { components_list as GudhubComponents } from '@gudhub/ssg-web-components-library';
 
 export const build_folder = 'dist';
 
@@ -21,6 +16,7 @@ export const chapters = {
 }
 
 export const components_list = [
+    ...GudhubComponents,
     {
         tag: 'header-component',
         src: '/src/assets/js/components/header/header.js'
