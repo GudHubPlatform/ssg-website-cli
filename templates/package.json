@@ -23,15 +23,15 @@
     },
     "scripts": {
         "build": "webpack --config webpack.prod.js && webpack --config webpack.bundle.js --mode production",
-        "dev": "concurrently \"webpack --watch --config webpack.dev.js\" \"webpack --watch --config webpack.bundle.js --mode development\" --kill-others --names \"dev|bundle\" --name-separator=\"|\"",
-        "start": "concurrently \"webpack --watch --config webpack.dev.js\" \"gudhub-web-server\" --kill-others --names \"webpack|server\" --name-separator=\"|\"",
+        "dev": "concurrently \"webpack --watch --config webpack.dev.js\" \"webpack --config webpack.bundle.js --mode development --watch\" --kill-others --names \"dev|bundle\" --name-separator=\"|\"",
+        "start": "webpack --watch --config webpack.dev.js & gudhub-web-server",
         "bundle": "webpack --config webpack.bundle.js --mode production"
     },
     "engines": {
         "node": "16.18.0"
     },
     "dependencies": {
-        "@gudhub/gh-component": "^2.0.4",
-        "@gudhub/meta-tag-component": "^1.0.0"
+        "@gudhub/gh-component": "^2.0.6",
+        "@gudhub/ssg-web-components-library": "^1.0.10"
     }
 }
