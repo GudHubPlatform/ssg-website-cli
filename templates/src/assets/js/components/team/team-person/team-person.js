@@ -1,6 +1,7 @@
 import html from './team-person.html';
 import './team-person.scss';
-import json from './team-person-properties.json';
+
+import jsonTemplate from './team-person-data.json';
 
 class TeamPerson extends GHComponent {
 
@@ -9,31 +10,17 @@ class TeamPerson extends GHComponent {
     }
 
     async onServerRender() {
+        this.firstName = this.getAttribute('data-first-name');
+        this.lastName = this.getAttribute('data-last-name');
 
-        if(this.member) {
+        if(this.firstName && this.lastName) {
             super.render(html);
-            return;
+        } else {
+            this.firstName = jsonTemplate.first_name;
+            this.lastName = jsonTemplate.last_name;
+            super.render(html);
         }
-
-        this.ghId = this.getAttribute('data-gh-id') || null;
-
-        const response = await gudhub.jsonConstructor({
-            "type": "array",
-            "id": 1,
-            "childs": json,
-            "property_name": "team",
-            "app_id": constants.chapters.team.app_id,
-            "filter": []
-        });
-
-        const { team } = response;
-
-        this.members = team;
-
-        super.render(html);
-
     }
-
 }
 
 if (!customElements.get('team-person')) {

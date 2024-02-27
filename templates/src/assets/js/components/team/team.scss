@@ -3,12 +3,12 @@ team-component {
         &__wrapper {
             display: flex;
             align-items: flex-start;
-            justify-content: flex-start;
+            justify-content: center;
             flex-wrap: wrap;
+            column-gap: 10px;
 
             team-person {
                 width: 20%;
-                margin-right: 5%;
                 margin-bottom: 20px;
 
                 &:nth-child(4n) {

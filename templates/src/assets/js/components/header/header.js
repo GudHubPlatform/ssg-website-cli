@@ -6,29 +6,49 @@ class Header extends GHComponent {
         super();
     }
 
-    onServerRender() {
+    async onServerRender() {
         this.menu = [
-            { name: 'Home', link: '/' },
-            { name: 'Services', link: '/services/' },
-            { name: 'About Us', link: '/about-us/' },
-            { name: 'Contact Us', link: '/contact-us/' }
+            { name: 'Solutions', link: '#solutions',
+                childs: [
+                    {name: 'Prices', link: '#'},
+                    {name: 'About Us', link: '#'},
+                    {name: 'Contact Us', link: '#'}
+                ]
+            },
+            { name: 'Prices', link: '#prices'},
+            { name: 'About Us', link: '/about-us/'},
+            { name: 'Contact Us', link: '/contact-us/'}
         ];
-
+        
+        this.theme = this.hasAttribute('data-light-letters');
+        
         super.render(html);
     }
-
+    
     onClientReady() {
-        const activePath = window.location.pathname;
-        const menu = this.querySelector('.menu').querySelectorAll('a');
-
-        menu.forEach((item) => {
-            if (item.getAttribute('href') === activePath) {
-                item.parentElement.classList.add('active');
+        if (window.scrollY > 50) {
+            this.classList.add('scrolled');
+        } else {
+            this.classList.remove('scrolled');
+        }
+        window.addEventListener("scroll", (e) => {
+            if (e.target.scrollingElement.scrollTop > 50) {
+                this.classList.add('scrolled');
+            } else {
+                this.classList.remove('scrolled');
             }
-        });
-
+        })
     }
 
+    openChild(element) {
+        if (window.innerWidth < 1200) {
+            event.preventDefault()
+            element.parentElement.classList.toggle('hover');
+        }
+    }
+    toogleMenu() {
+        this.classList.toggle('active');
+    }
 }
 
 window.customElements.define('header-component', Header);
