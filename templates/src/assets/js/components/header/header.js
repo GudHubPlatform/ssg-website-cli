@@ -10,12 +10,14 @@ class Header extends GHComponent {
         this.menu = [
             { name: 'Solutions', link: '#solutions',
                 childs: [
-                    {name: 'Prices', link: '#'},
-                    {name: 'About Us', link: '#'},
-                    {name: 'Contact Us', link: '#'}
+                    {name: 'Prices', link: '#prices'},
+                    {name: 'Team', link: '/team-members/'},
+                    {name: 'About Us', link: '/about-us/'},
+                    {name: 'Contact Us', link: '/contact-us/'}
                 ]
             },
             { name: 'Prices', link: '#prices'},
+            { name: 'Team', link: '/team-members/'},
             { name: 'About Us', link: '/about-us/'},
             { name: 'Contact Us', link: '/contact-us/'}
         ];
