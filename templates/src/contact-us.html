@@ -4,18 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/default-styles.css">
+    
+    <style data-webpack-style="true">
+        .container:has(.flex-wrapper) {
+            margin-bottom: -10px;
+        }
+        .container > .flex-wrapper {
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        @media screen and (max-width: 900px) {
+            .container > .flex-wrapper {
+                flex-direction: column;
+                gap: 0;
+            }
+            get-in-touch-block[data-gh-id="get-in-touch"] .get_in_touch_block {
+                padding-top: 0;
+            }
+            contact-us-block[data-gh-id="contact_info"] .contact_us_block .title {
+                text-align: center;
+            }
+            contact-us-block[data-gh-id="contact_info"] .contact_us_block .subtitle {
+                text-align: center;
+            }
+        }
+        get-in-touch-block[data-gh-id="get-in-touch"] .container {
+            padding: 0;
+        }
+        get-in-touch-block[data-gh-id="get-in-touch"] .fet_in_touch_top {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <canonical-component></canonical-component>
+    <meta-index></meta-index>
+    <organization-schema></organization-schema>
+    <title-tag></title-tag>
+    <meta-tag og type="title"></meta-tag>
+    <meta-tag twitter type="title" data-twitter-name="@Template"></meta-tag>
+    <meta-tag type="description"></meta-tag>
+    <meta-tag og type="description"></meta-tag>
+    <meta-tag twitter type="description"></meta-tag>
+    <meta-tag og type="meta_image_src"></meta-tag>
+    <meta-tag twitter type="meta_image_src"></meta-tag>
 
-    <header-component></header-component>
-    <hero-component class="small" data-no-text></hero-component>
-    <text-component data-gh-id="about-us"></text-component>
-    <columns-component data-gh-id="data"></columns-component>
-    <form-component></form-component>
+    <header-component data-light-letters class="dark_white_theme"></header-component>
+
+    <div class="container">
+        <div class="flex-wrapper">
+            <contact-us-block class="white_white_theme" data-gh-id="contact_info"></contact-us-block>
+
+            <get-in-touch-block class="white_dark_theme" data-gh-id="get-in-touch" id="contact-us"></get-in-touch-block>
+        </div>
+    </div>
+    
+    <popup-container class="white_white_theme" data-popup-id="form">
+        <get-in-touch-form data-in-popup data-form-id="popup"></get-in-touch-form>
+    </popup-container>
+
+    <popup-container class="white_white_theme" data-popup-id="bottom-right" data-position="bottom-right" data-no-bg-shadow data-autostart="2000">
+        <get-in-touch-form data-in-popup data-form-id="small bottom-right popup"></get-in-touch-form>
+    </popup-container>
+
+
     <footer-component></footer-component>
 
     <script src="/assets/js/main.js"></script>

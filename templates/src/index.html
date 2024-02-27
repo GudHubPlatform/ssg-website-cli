@@ -4,23 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/default-styles.css">
+
+    <style data-webpack-style="true">
+        prices-cards[data-gh-id="prices_cards"] section {
+            padding-bottom: 80px;
+        }
+        prices-cards[data-gh-id="prices_cards"] .secondary-block {
+            --button-secondary-normal-fill-color: transparent;
+            --button-secondary-normal-border-color: #0A79FE;
+            --button-secondary-normal-font-color: #0A79FE;
+            
+            --button-secondary-hover-fill-color: #0A79FE;
+            --button-secondary-hover-border-color: #0A79FE;
+            --button-secondary-hover-font-color: #fff;
+        }
+        @media screen and (min-width: 1050px) {
+            reviews-slider {
+                padding-top: 100px;
+            }
+        }
+        get-in-touch-block#contact-us[data-gh-id="get-in-touch"] h2 {
+            font-size: 44px;
+        }
+    </style>
 </head>
 <body>
+    <canonical-component></canonical-component>
+    <meta-index></meta-index>
+    <organization-schema></organization-schema>
+    <title-tag></title-tag>
+    <meta-tag og type="title"></meta-tag>
+    <meta-tag twitter type="title" data-twitter-name="@Template"></meta-tag>
+    <meta-tag type="description"></meta-tag>
+    <meta-tag og type="description"></meta-tag>
+    <meta-tag twitter type="description"></meta-tag>
+    <meta-tag og type="meta_image_src"></meta-tag>
+    <meta-tag twitter type="meta_image_src"></meta-tag> 
 
-    <meta-tag type="title"></meta-tag>
+    <header-component class="dark_white_theme"></header-component>
+    
+    <homepage-banner class="dark_white_theme" data-gh-id="homepage_banner"></homepage-banner>
 
-    <header-component></header-component>
-    <hero-component data-gh-id="hero"></hero-component>
-    <grid-component data-gh-id="problems"></grid-component>
-    <grid-component class="items-with-border" style="background: url('/assets/images/hero.svg') no-repeat center center, #EEF3F7;" data-gh-id="services"></grid-component>
-    <grid-component class="items-with-border" data-gh-id="partners"></grid-component>
-    <text-component style="background: #EEF3F7;" data-gh-id="lorem"></text-component>
-    <columns-component data-gh-id="pricing"></columns-component>
-    <form-component style="background: #EEF3F7;"></form-component>
+    <counter-section class="white_dark_theme" data-gh-id="counter"></counter-section>
+
+    <grid-component class="dark_white_theme"  data-items-in-row="3" data-gh-id="ready_to_business" id="solutions"></grid-component>
+
+    <media-and-text class="dark_white_theme" data-gh-id="development"></media-and-text>
+    
+    <media-and-accordion class="white_dark_theme" data-gh-id="abilities"></media-and-accordion>
+    
+    <animation-block class="dark_white_theme" data-gh-id="integrations"></animation-block>
+    
+    <prices-cards class="white_dark_theme" data-gh-id="prices_cards" id="prices"></prices-cards>
+
+    <banner-and-text class="dark_white_theme" data-gh-id="offer_plans"></banner-and-text>
+    
+    <overflow-cards class="white_dark_theme" data-gh-id="cases"></overflow-cards>
+
+    <reviews-slider class="white_dark_theme" data-gh-id="reviews"></reviews-slider>
+
+    <get-in-touch-block class="white_dark_theme" data-gh-id="get-in-touch"></get-in-touch-block>
+    
+    <popup-container class="white_white_theme" data-popup-id="form">
+        <get-in-touch-form data-in-popup data-form-id="popup"></get-in-touch-form>
+    </popup-container>
+
+    <popup-container class="white_white_theme" data-popup-id="bottom-right" data-position="bottom-right" data-no-bg-shadow data-autostart="2000">
+        <get-in-touch-form data-in-popup data-form-id="small bottom-right popup"></get-in-touch-form>
+    </popup-container>
+
     <footer-component></footer-component>
 
     <script src="/assets/js/main.js"></script>

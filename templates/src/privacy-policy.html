@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style data-webpack-style="true">
+        .privacy-policy .content {
+            padding-bottom: 30px;
+        }
+
+        .privacy-policy h1 {
+            color: #141616;
+            font-size: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .privacy-policy h2 {
+            color: #141616;
+            font-size: 32px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            line-height: normal;
+            position: relative;
+            display: inline-block;
+        }
+
+        .privacy-policy h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            height: 2px;
+            width: 90px;
+            background-color: #c7c6c6;
+            transition: all 0.5s ease;
+        }
+
+        .privacy-policy h2.active::after {
+            width: 100%;
+            background-color: #00BFD6;
+        }
+
+        .privacy-policy h3 {
+            font-size: 24px;
+            line-height: normal;
+            margin: 30px 0 20px;
+            font-weight: 700;
+        }
+
+        .privacy-policy div {
+            font-size: 18px;
+            line-height: 32px;
+        }
+        .privacy-policy p {
+            font-size: 18px;
+            line-height: 32px;
+            margin-bottom: 18px;
+        }
+
+        .privacy-policy p a {
+            color: #00BFD6;
+        }
+
+        .privacy-policy ul,
+        .privacy-policy ol {
+            padding: 0;
+        }
+
+        .privacy-policy ul li,
+        .privacy-policy ol li {
+            font-size: 18px;
+            line-height: 1.78;
+            margin-bottom: 10px;
+            padding-left: 18px;
+        }
+
+        .privacy-policy ul {
+            list-style-type: none;
+            margin: 12px 0;
+        }
+
+        .privacy-policy ul li {
+            position: relative;
+        }
+
+        .privacy-policy ul li::before {
+            content: '';
+            position: absolute;
+            top: 13px;
+            left: 5px;
+            width: 6px;
+            height: 6px;
+            background-color: #00BFD6;
+        }
+
+        .privacy-policy ol {
+            margin: 12px 0 12px 18px;
+        }
+
+        .privacy-policy ol li {
+            padding-left: 0;
+        }
+
+        .privacy-policy ol li::marker {
+            color: #00BFD6;
+        }
+
+        .privacy-policy .share {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .privacy-policy .share>div:first-child {
+            margin-right: 15px;
+        }
+
+        .privacy-policy .share .social {
+            display: flex;
+            align-items: center;
+        }
+
+        .privacy-policy .share .social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #c6c5c5;
+            border-radius: 50%;
+            transition: 0.2s all;
+            margin-right: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .privacy-policy .share .social a:first-child img {
+            margin-top: 3px;
+        }
+
+        .privacy-policy .share .social a:last-child img {
+            margin-top: 6px;
+        }
+
+        .privacy-policy .share .social a img {
+            max-width: 80%;
+        }
+
+        .privacy-policy a {
+            position: relative;
+            color: #00BFD6;
+            text-decoration: none;
+        }
+        
+        .privacy-policy a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            height: 1px;
+            width: 0;
+            transition: all .2s ease;
+            background-color: #00BFD6;
+        }
+        .privacy-policy a:hover::after {
+            width: 100%;
+        }
+
+        .privacy-policy .share .social a:hover {
+            background-color: #00BFD6;
+        }
+
+        @media screen and (max-width: 1279px) {
+            .privacy-policy p {
+                margin-bottom: 12px;
+            }
+        }
+
+        @media screen and (max-width: 1023px) {
+            .privacy-policy h1 {
+                font-size: 32px;
+            }
+
+            .privacy-policy h2 {
+                font-size: 26px;
+                margin-bottom: 20px;
+                margin-top: 40px;
+            }
+
+            .privacy-policy h2::after {
+                bottom: -10px;
+            }
+
+            .privacy-policy h3 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                margin-top: 30px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .privacy-policy h1 {
+                font-size: 28px;
+            }
+
+            .privacy-policy h2 {
+                font-size: 22px;
+                margin-top: 30px;
+            }
+
+            .privacy-policy h3 {
+                font-size: 20px;
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+
+            .privacy-policy p {
+                font-size: 16px;
+                line-height: 28px;
+            }
+
+            .privacy-policy ul li,
+            .privacy-policy ol li {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .privacy-policy ol li {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canonical-component></canonical-component>
+    <meta-index></meta-index>
+    <organization-schema></organization-schema>
+    <title-tag></title-tag>
+    <meta-tag og type="title"></meta-tag>
+    <meta-tag twitter type="title" data-twitter-name="@Template"></meta-tag>
+    <meta-tag type="description"></meta-tag>
+    <meta-tag og type="description"></meta-tag>
+    <meta-tag twitter type="description"></meta-tag>
+    <meta-tag og type="meta_image"></meta-tag>
+    <meta-tag twitter type="meta_image"></meta-tag>
+
+    <header-component></header-component>
+
+    <section class="privacy-policy">
+        <div class="container">
+            <div class="content">
+                <!-- EXAMPLE TEXT -->
+
+                <!-- <h1>Privacy Policy</h1>
+                <p>This statement of Privacy Policy describes our processes and operations of collecting and using your data.</p>
+                <div>The last update: 11/16/2022.</div>
+                
+                <h2>Who we are</h2>
+                <p>We are Atlasiko Inc., an international company with offices in the USA and Ukraine that offers IT consulting and custom software development services. You are presently browsing our website, which serves as the online representation of our business, as you read this page. We are steadfastly committed to giving you a wonderful experience while you browse our website, sharing the things you might find interesting, immediately answering any queries that might arise, and ensuring that the website operates continuously so that you don't get confused. Without your kind cooperation, which you provide by sharing your personal data with us, this won't be possible. While also acknowledging the great sensitivity of personal data matters, we take your privacy very seriously.</p>
+                
+                <h2>What types of personal information we collect</h2>
+                <p>Atlasiko Inc. gathers information so that we can give you honest evaluations of our services. When you complete the Contact-us form to get in touch with us for support or to comment on one of our articles, you share some of this information voluntarily. Using technologies like cookies, as well as obtaining error reports or usage information from applications operating on your device, we collect some data.</p>
+                
+                <p>We also get information from outside sources. We safeguard information obtained from third parties in accordance with the policies outlined in this statement and any additional limitations imposed by the information's origin. These outside sources could change over time, but at the moment they consist of:</p>
+                
+                <ol>
+                    <li>Service providers assist us in determining your location based on your IP address so that we can tailor some of our goods to you.</li>
+                    <li>Partners who we co-brand services with or work with on marketing initiatives.
+                    sources that are open to the public, including free government databases or other information in the public domain.</li>
+                    <li>You have options about the information we gather. You have the option to refuse to provide personal information when prompted. However, you might not be able to use a service, or a feature, or get feedback if you decide not to share data that is required for its delivery.</li>
+                </ol>
+                
+                <p>The information we gather may consist of the following:</p>
+
+                <p><b><i>Name and contact information.</i></b> We gather information such as your first and last name, business email address, phone number, and company name.</p>
+                <p><b><i>Demographic information.</i></b> We gather information about you, such as your nationality and language.</p>
+                <p><b><i>Website data.</i></b> We keep track of your online activities on the Atlasiko Inc. website. For illustration, we gather:</p>
+                
+                <ul>
+                    <li>information on visitor behavior patterns, including information on the website pages you visit and how long you spend there.</li>
+                    <li>data for configuration. We gather information about the network that you use to access our website. Along with it is your IP address.</li>
+                    <li>performance information and error reports. We keep track of any issues you have with our services. This information enables us to identify issues and offer fixes. Error reports may contain information about the nature or severity of the issue, specifics about the hardware or software involved, the contents of the files you were using at the time the error occurred, as well as information about other software on your device, depending on your browsing environment and settings.</li>
+                    <li>help and troubleshooting information. Atlasiko Inc. gathers information about you and your hardware, software, and other incident-related details in the event that it provides troubleshooting and assistance. These details include your contact information, the content of any chats or other communications you have with Atlasiko Inc., information about the state of the machine and the application at the time the fault occurred and during diagnostics, and registry and system information about software and hardware setups.</li>
+                </ul>
+
+                <p>Please note that the description field of a Contact-us form allows you to provide personal information that we don't necessarily need, such as your payment information. We only intend to save this data on our backup server; we won't utilize it in any other way. Do not provide us with any personal information that has not been specifically requested from you.</p>
+                
+                <p>We do not deliberately gather information about children or private individuals because our website is not designed for them. Parents can review, modify, or ask for the deletion of their children's personal data, as well as cancel any prior consent decisions.</p>
+                
+                <p>We may also obtain personal information from publicly accessible sources or from third parties who have your permission to disclose it to us.</p>
+
+                <h2>Why we collect data</h2>
+
+                <p>Sending communications, including marketing communications, advertising, evaluating website visitor statistics, technical website issues, and enhancing website user experience are just a few of the reasons Atlasiko Inc. collects the data.</p>
+                <p>In order to fulfill these goals, we'll communicate with you about matters you've requested; we'll get in touch with you if we need to get more information from you; we'll double-check our records; we'll occasionally ask how you're doing. We don't share our email lists for rent or trade with other companies or organizations.</p>                            
+                <p>We have included technological and operational precautions intended to stop data leaks, though, to enhance privacy. For instance, we keep information about you that we have obtained directly or indirectly, such as your name, company name, email address, or phone number, in a secure database.</p>                            
+                <p>Additionally, you can subscribe to emails and specify whether you want to hear from Atlasiko Inc. via email, SMS, or phone for promotional messages.</p>                            
+
+                <h2>Why we share collected data</h2>
+
+                <p>Your information will be given to our Development Department, which will deal with your request. Our Development Department is not permitted to use any personal data it obtains from us for any other reasons than those listed above and is subject to our data privacy and security rules. All responsibilities of the department are outlined in an agreement between Atlasiko Inc. and the Development Department, which aims to provide a sufficient level of protection for the personal information you give.</p>
+                <p>We shall obtain access to, move, disclose, and keep a copy of your personal information where we in good faith believe it is required to:</p>
+                <ul>
+                    <li>Obey the law as it is written or answer to a legitimate legal summons, such as one from the police or another government agency.</li>
+                    <li>Protecting our customers could mean stopping spam or attempts to deceive people who use our services, or it could mean working to stop someone from dying or becoming seriously hurt.</li>
+                    <li>Defend Atlasiko Inc.'s rights, particularly by upholding the conditions controlling the use of the services.</li>
+                </ul>
+                <p>We remain liable if third-party agents process personal data on our behalf in a manner that is at odds with the guidelines set forth below unless we can demonstrate that we had no involvement in the incident that resulted in the damage.</p>
+                <p>Please be aware that some of our website pages contain links to third-party goods whose privacy practices may be different from ours. If you give any of those organizations your personal information, their privacy policies will apply to your information.</p>
+
+                <h2>What rights you have</h2>
+                <p>You have the right to access, modify, or remove the personal data we maintain about you.</p>
+                <ol>
+                    <li>You have the right to know at any moment what personal information we have about you and who has access to it.</li>
+                    <li>Any outdated or incomplete personal information we may have about you may be requested from us for free updating.</li>
+                    <li>Any marketing messages we may send you can be opted out of. Service communications that are required do not fall under this option.</li>
+                    <li>You have the right to withdraw your permission at any time for the processing of your information and ask to delete the data.</li>
+                </ol>
+
+                <h2>Cookies</h2>
+                <p>Atlasiko Inc. provides online services and assists in data collection using cookies, a small text file that is stored on your device. A cookie's text can contain other information in addition to a string of numbers and letters that uniquely identify your computer.</p>
+                <p>We use cookies and related technologies for a variety of things, such as:</p>
+                <ul>
+                    <li><i>Security.</i> Cookies help us identify fraud and misuse of our services and website.</li>
+                    <li><i>Preserving the data you supply on a website.</i> In order to remember the data you have supplied, we record the information you submit in a cookie.</li>
+                </ul>
+                <p>We typically set cookies primarily for statistical analysis of websites.</p>
+
+                <h3>Controlling Cookies</h3>
+                <p>Typically, you can disable cookies in your browser.</p>
+
+                <h3>Additional Related Technologies</h3>
+                <p>We may also use other comparable technologies in addition to customary cookies to store and access data files on your computer. Usually, this is done to boost speed and efficiency by keeping particular data locally. Similar to traditional cookies, these technologies allow you to save a special computer identifier that can be used to trace your online activity. Local Shared Objects is one of these technologies (or "Flash cookies").</p>
+
+                <h2>Information for end users </h2>
+                <p>Atlasiko Inc. wants to provide its services to businesses. If your organization has any policies, they may apply to how you use the Atlasiko Inc. website. Please contact your administrator if your organization is in charge of overseeing how you use Atlasiko Inc.'s website. Atlasiko disclaims any liability for our customers' privacy or security practices, which may vary from those outlined in this privacy statement.</p>
+                <p>The owner of the domain (for example, your employer) associated with your email address may access and process your data, including the content of your communications and files, if you use an email address provided by a company or institution with which you are affiliated, such as a school or employer.</p>
+                
+                <h2>Data Security Procedures</h2>
+                <p>To guard against unauthorized access, use, or disclosure of your personal information, we implement a number of security technologies and procedures. For instance, we keep the private information you give us on computers in secure locations with restricted access.</p>
+                
+                <h2>How long will the data be kept?</h2>
+                <p>Atlasiko Inc. keeps personal information for as long as it takes to fulfill your requests for services and comments, as well as for other vital functions including adhering to legal requirements and upholding contracts. Actual retention times may vary since these requirements can change for various data types. The following factors are used to calculate the retention periods:</p>
+                <ul>
+                    <li>There's private information of a sensitive nature. If so, a shorter retention period of up to five years would often be suitable.</li>
+                    <li>Atlasiko Inc. is required to keep the data by law, a contract, or another requirement. Government directives to preserve data necessary for an inquiry are two examples of obligatory data retention legislation in the relevant jurisdiction.</li>
+                </ul>
+
+                <h2>How to contact us for further information</h2>
+                <p>If you want to find out more about how we use your data, ask to update or delete your personal information, or have a suggestion or complaint, email us at <a href="mailto:sales@atlasiko.com">sales@atlasiko.com</a>. You can also get in touch on this matter via the <a href="/contact-us/">Contact-us</a> form.</p> -->
+            </div>
+            <div class="share">
+                <div>Share: </div>
+                <div class="social">
+                    <a href="https://www.facebook.com/sharer.php?u=https://atlasiko.com/privacy-policy" class="social__item" rel="noreferrer noopener nofollow" target="_blank">
+                        <img width="32" height="36" src="/assets/images/icons/facebook-shadow.svg" alt="icon-facebook" title="icon-facebook">
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://atlasiko.com/privacy-policy" class="social__item" rel="noreferrer noopener nofollow" target="_blank">
+                        <img width="32" height="31" src="/assets/images/icons/linkedin-shadow.svg" alt="icon-linkedin" title="icon-linkedin">
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=https://atlasiko.com/privacy-policy" class="social__item" rel="noreferrer noopener nofollow" target="_blank">
+                        <img width="32" height="29" src="/assets/images/icons/twitter-shadow.svg" alt="icon-twitter" title="icon-twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer-component></footer-component>
+
+    <cookies-popup></cookies-popup>
+<script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
