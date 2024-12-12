@@ -25,9 +25,11 @@ export async function installGudHubApps(user, targetDirectory) {
         const apps = {
             pages: data.apps.find(app => app.app_name.indexOf('Pages') > -1),
             team: data.apps.find(app => app.app_name.indexOf('Team') > -1),
+            api: data.apps.find(app => app.app_name.indexOf('API') > -1)
         }
 
         await fs.writeFile(targetDirectory + '/config.mjs', generateConfig(user.auth_key, apps));
+        await fs.writeFile(targetDirectory + '/config/chapters.mjs', generateChapters(apps));
 
         clearInterval(spinner);
         console.log('GudHub Applications installed successfully!');

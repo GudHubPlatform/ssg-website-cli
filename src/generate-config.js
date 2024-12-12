@@ -1,18 +1,32 @@
 export function generateConfig(auth_key, apps) {
     return /*javascript*/`
-import { components_list as GudhubComponents } from '@gudhub/ssg-web-components-library';
+export { chapters } from './config/chapters.mjs';
+export { routes } from './config/routes.mjs';
+export { components_list } from './config/components-list.mjs';
+export { blog_config } from './config/blog-config.mjs';
 
-export const build_folder = 'dist';
-
+// PLACE CONSTANTS UNDER THIS LINE AND ADD COMMENT TO EXPLAIN WHAT YOUR CONSTANT DO
+export const build_folder = 'dist'; // to server have path to build
 export const auth_key = "${auth_key.replace(/\n/g, "\\n")}";    
+export const index_sitemap = true; // if false, server will not generate index sitemap
 
+// ClientConfig
+export * as clientConfig from './client-config.mjs';
+`
+}
+
+export function generateChapters(apps) {
+    const slug_field_id = apps.pages.field_list.find(field => field.name_space === 'slug').field_id;
+    return /*javascript*/`
 export const chapters = {
     pages: {
         app_id: ${apps.pages.app_id},
-        slug_field_id: ${apps.pages.field_list.find(field => field.name_space === 'slug').field_id},
+        slug_field_id: ${slug_field_id},
         json_field_id: ${apps.pages.field_list.find(field => field.name_space === 'json').field_id},
+        title_field_id: ${apps.pages.field_list.find(field => field.name_space === 'title').field_id},
         heading_field_id: ${apps.pages.field_list.find(field => field.name_space === 'h1').field_id},
         description_field_id: ${apps.pages.field_list.find(field => field.name_space === 'description').field_id},
+        blog_main_page_item_id: ${apps.pages.items_list.find((item) => item.fields.find((field) => field.field_id === slug_field_id && field.field_value === '/blog/')).item_id}, // item_id of blog main page (in application Pages, so this page relate to chapter - pages)
         image_field_id: ${apps.pages.field_list.find(field => field.name_space === 'meta_image_src').field_id},
         sitemap: {
             status_field_id: ${apps.pages.field_list.find(field => field.name_space === 'status').field_id},
@@ -47,151 +61,6 @@ export const chapters = {
                 });
             }
         }
-    },
-    team: {
-        app_id: ${apps.team.app_id}
     }
-}
-
-export const index_sitemap = true;
-
-export const components_list = [
-    ...GudhubComponents,
-    {
-        tag: 'contact-us-block',
-        src: '/src/assets/js/components/contact-us-block/contact-us-block.js'
-    },
-    {
-        tag: 'footer-component',
-        src: '/src/assets/js/components/footer/footer.js',
-    },
-    {
-        tag: 'header-component',
-        src: '/src/assets/js/components/header/header.js',
-    },
-    {
-        tag: 'team-component',
-        src: '/src/assets/js/components/team/team.js',
-    },
-    {
-        tag: 'team-person',
-        src: '/src/assets/js/components/team/team-person/team-person.js',
-    }
-]
-
-export const form_config = [
-    {
-        "id": "main",
-        "title": "Leave Application",
-        "subtitle": "",
-        "mailConfig": {
-            "to": "%",
-            "from": "%",
-            "subject": "%subject%"
-        },
-        "inputs": [
-            {
-                "name": "name",
-                "type": "short",
-                "required": "true",
-                "placeholder": "Name *",
-                "width": 6
-            },
-            {
-                "name": "company",
-                "type": "short",
-                "required": "false",
-                "placeholder": "Company",
-                "width": 6
-            },
-            {
-                "name": "email",
-                "type": "email",
-                "required": "true",
-                "placeholder": "Email *",
-                "errorText": "Enter a valid email",
-                "width": 6
-            },
-            {
-                "name": "phone",
-                "type": "phone",
-                "required": "false",
-                "placeholder": "Phone",
-                "errorText": "Enter a valid phone number",
-                "width": 6
-            },
-            {
-                "name": "message",
-                "type": "textarea",
-                "required": "false",
-                "placeholder": "Comment",
-                "width": 12
-            }
-        ]
-    },
-    {
-        "id": "popup",
-        "title": "Leave Application",
-        "subtitle": "",
-        "mailConfig": {
-            "to": "%",
-            "from": "%",
-            "subject": "%subject%"
-        },
-        "inputs": [
-            {
-                "name": "email",
-                "type": "email",
-                "required": "true",
-                "placeholder": "Email *",
-                "errorText": "Enter a valid email",
-                "width": 6
-            },
-            {
-                "name": "phone",
-                "type": "phone",
-                "required": "false",
-                "placeholder": "Phone",
-                "errorText": "Enter a valid phone number",
-                "width": 6
-            },
-            {
-                "name": "message",
-                "type": "textarea",
-                "required": "false",
-                "placeholder": "Comment",
-                "width": 12
-            }
-        ]
-    },
-    {
-        "id": "small bottom-right popup",
-        "title": "Get a Free Consultation",
-        "subtitle": "",
-        "mailConfig": {
-            "to": "%",
-            "from": "%",
-            "subject": "%subject%"
-        },
-        "inputs": [
-            {
-                "name": "email",
-                "type": "email",
-                "required": "true",
-                "placeholder": "Email *",
-                "errorText": "Enter a valid email",
-                "width": 12
-            },
-            {
-                "name": "phone",
-                "type": "phone",
-                "required": "false",
-                "placeholder": "Phone",
-                "errorText": "Enter a valid phone number",
-                "width": 12
-            }
-        ]
-    }
-];
-`
+}`;
 }

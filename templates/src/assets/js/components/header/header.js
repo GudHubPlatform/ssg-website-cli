@@ -11,13 +11,15 @@ class Header extends GHComponent {
             { name: 'Solutions', link: '#solutions',
                 childs: [
                     {name: 'Prices', link: '#prices'},
-                    {name: 'Team', link: '/team-members/'},
+                    { name: 'Components', link: '/components/' },
+                    { name: 'Blog', link: '/blog/'},
                     {name: 'About Us', link: '/about-us/'},
                     {name: 'Contact Us', link: '/contact-us/'}
                 ]
             },
             { name: 'Prices', link: '#prices'},
-            { name: 'Team', link: '/team-members/'},
+            { name: 'Components', link: '/components/' },
+            { name: 'Blog', link: '/blog/'},
             { name: 'About Us', link: '/about-us/'},
             { name: 'Contact Us', link: '/contact-us/'}
         ];
