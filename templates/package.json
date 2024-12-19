@@ -32,6 +32,6 @@
     },
     "dependencies": {
         "@gudhub/gh-component": "^2.0.6",
-        "@gudhub/ssg-web-components-library": "^1.0.10"
+        "@gudhub/ssg-web-components-library": "^1.0.43"
     }
 }
