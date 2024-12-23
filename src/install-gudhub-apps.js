@@ -1,6 +1,6 @@
 import axios from 'axios';
 import fsSync from 'fs';
-import { generateConfig } from './generate-config.js';
+import { generateConfig, generateChapters } from './generate-config.js';
 import cliSpinners from 'cli-spinners';
 import logUpdate from 'log-update';
 const fs = fsSync.promises;
@@ -18,17 +18,16 @@ export async function installGudHubApps(user, targetDirectory) {
 
         const { data } = await axios.post('https://gudhub.com/api/services/app-install/express-install', {
             auth_key: user.auth_key,
-            template_id: "27822.3743397",
+            template_id: "27822.3851162",
             progress: false
         });
-        
+
         const apps = {
             pages: data.apps.find(app => app.app_name.indexOf('Pages') > -1),
-            team: data.apps.find(app => app.app_name.indexOf('Team') > -1),
             api: data.apps.find(app => app.app_name.indexOf('API') > -1)
         }
 
-        await fs.writeFile(targetDirectory + '/config.mjs', generateConfig(user.auth_key, apps));
+        await fs.writeFile(targetDirectory + '/config.mjs', generateConfig(user.auth_key));
         await fs.writeFile(targetDirectory + '/config/chapters.mjs', generateChapters(apps));
 
         clearInterval(spinner);

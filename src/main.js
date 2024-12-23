@@ -16,7 +16,7 @@ export async function createProject(options) {
     await updatePackage(targetDirectory, options);
 
     if(options.gudhub_install === true) {
-        await installGudHubApps(options.gudhub_user, targetDirectory);        
+        await installGudHubApps(options.gudhub_user, targetDirectory);
     }
     
     if(options.install === true) {
