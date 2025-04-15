@@ -25,7 +25,6 @@ export const chapters = {
         title_field_id: ${apps.pages.field_list.find(field => field.name_space === 'title').field_id},
         heading_field_id: ${apps.pages.field_list.find(field => field.name_space === 'h1').field_id},
         description_field_id: ${apps.pages.field_list.find(field => field.name_space === 'description').field_id},
-        blog_main_page_item_id: ${apps.pages.items_list.find((item) => item.fields.find((field) => field.field_id === slug_field_id && field.field_value === '/blog/')).item_id}, // item_id of blog main page (in application Pages, so this page relate to chapter - pages)
         image_field_id: ${apps.pages.field_list.find(field => field.name_space === 'meta_image_src').field_id},
         sitemap: {
             status_field_id: ${apps.pages.field_list.find(field => field.name_space === 'status').field_id},

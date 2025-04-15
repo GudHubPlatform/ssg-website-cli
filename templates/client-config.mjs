@@ -3,18 +3,20 @@
 
 // json files must be exported like this: export {default as object_name} from 'relative_path' assert {type: 'json'};.
 
-
 // imports of configs that are responsible for components content and must be filtered by language localization (property "langCode")
 // example: "componentConfig" is array of objects that have "langCode" property
 
 import { generalInfo } from './config/general-info.mjs';
 import { formConfig } from './config/form-config.mjs';
 import { menuConfig } from './config/menu-config.mjs';
+import { chapters } from './config/chapters.mjs';
+
 
 export const componentsConfigs = {
     generalInfo,
     menuConfig,
-    formConfig
+    formConfig,
+    chapters
 };
 
 export const multiLanguage = false;

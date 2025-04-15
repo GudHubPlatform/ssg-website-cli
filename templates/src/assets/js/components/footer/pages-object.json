@@ -40,15 +40,6 @@
             ],
             "search_type": "equal_or",
             "selected_search_option_variable": "Value"
-        },
-        {
-            "field_id": 796197,
-            "data_type": "text",
-            "valuesArray": [
-                "blog"
-            ],
-            "search_type": "not_contain_or",
-            "selected_search_option_variable": "Value"
         }
     ],
     "isSortable": 0

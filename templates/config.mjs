@@ -1,7 +1,8 @@
 export { chapters } from './config/chapters.mjs';
+export { redirects } from './config/redirects.mjs';
 export { routes } from './config/routes.mjs';
 export { components_list } from './config/components-list.mjs';
-export { blog_config } from './config/blog-config.mjs';
+
 
 // PLACE CONSTANTS UNDER THIS LINE AND ADD COMMENT TO EXPLAIN WHAT YOUR CONSTANT DO
 export const build_folder = 'dist'; // to server have path to build
